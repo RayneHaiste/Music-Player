@@ -8,3 +8,4 @@ TO DO LIST
 [X]Install minim again since it didnt finish last time
 []Move songs into their own folder
 []Move sound effects into own folder
+[]Use Mercers sound effects
