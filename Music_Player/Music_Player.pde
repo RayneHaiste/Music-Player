@@ -8,6 +8,7 @@ float BackArrowX, BackArrowY, BackArrowWidth, BackArrowHeight;
 float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
 float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
+
 //
 void setup() {
   //size(400, 500); //width, height
@@ -63,8 +64,8 @@ void setup() {
  rect(SongNameX, SongNameY, SongNameWidth, SongNameHeight);
  rect(NextSongX, NextSongY, NextSongWidth, NextSongHeight);
  rect(PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight);
+ rect(SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight);
  /*
- rect(PauseX, PauseY, PauseWidth, PauseHeight);
  rect(SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight);
  rect(X, Y, Width, Height);
  rect(AlbumNameX, AlbumNameY, AlbumNameWidth, AlbumNameHeight);
