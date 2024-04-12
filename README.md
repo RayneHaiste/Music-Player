@@ -8,3 +8,5 @@ TO DO LIST
 [X]Install minim again since it didnt finish last time
 [X]Move songs into their own folder
 [X]Move sound effects into own folder
+[]Night mode colors,FFFF00, 000000.
+[]Day mode colors, 000000, 00FF8E
