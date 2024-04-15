@@ -9,7 +9,8 @@ float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
 float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
 //
-color backgroundColour, DarkBackground, WhiteBackground; 
+color backgroundColour, DarkBackground, WhiteBackground;
+Boolean whiteMode=false;
 //
 void setup() {
   //size(400, 500); //width, height
@@ -94,7 +95,8 @@ void setup() {
  //Var Population
  DarkBackground = 0; //Gray Scale
  WhiteBackground = #255; //Gray Scale
-if ( hour()>=9 && hour() <=17) backgroundColour = WhiteBackground;
+ whiteMode = True;
+if (whiteMode==true) hour()>=9 && hour() <=17) backgroundColour = WhiteBackground;
 if ( hour()<9 && hour() >17)  backgroundColour = DarkBackground;
  
 
