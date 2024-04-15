@@ -8,7 +8,8 @@ float BackArrowX, BackArrowY, BackArrowWidth, BackArrowHeight;
 float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
 float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
-
+//
+color backgroundColour, DarkBackground, WhiteBackground; 
 //
 void setup() {
   //size(400, 500); //width, height
@@ -66,6 +67,7 @@ void setup() {
  rect(PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight);
  rect(SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight);
  /*
+ 
  rect(SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight);
  rect(X, Y, Width, Height);
  rect(AlbumNameX, AlbumNameY, AlbumNameWidth, AlbumNameHeight);
@@ -89,6 +91,13 @@ void setup() {
  rect(X, Y, Width, Height);
  rect(X, Y, Width, Height);
  */
+ //Var Population
+ DarkBackground = 0; //Gray Scale
+ WhiteBackground = #255; //Gray Scale
+if ( hour()>=9 && hour() <=17) backgroundColour = WhiteBackground;
+if ( hour()<9 && hour() >17)  backgroundColour = DarkBackground;
+ 
+
   //
   //CONTINUE HERE
   //Paper Folding for Case Study
@@ -98,6 +107,7 @@ void setup() {
 } //End setup
 //
 void draw() {
+  background(backgroundColour); //Grayscale
 } //End draw
 //
 void keyPressed() {
