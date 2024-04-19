@@ -10,6 +10,8 @@ float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
 //
 color backgroundColour, DarkBackground, WhiteBackground;
+color foregroundcolour;
+color white=255, purple=#FF00FF, black=0, green=#00FF8E;
 Boolean whiteMode=false;
 //
 void setup() {
@@ -93,13 +95,13 @@ void setup() {
  rect(X, Y, Width, Height);
  */
  //Var Population
- DarkBackground = 0; //Gray Scale
- WhiteBackground = #255; //Gray Scale
- whiteMode = True;
-if (whiteMode==true) hour()>=9 && hour() <=17) backgroundColour = WhiteBackground;
-if ( hour()<9 && hour() >17)  backgroundColour = DarkBackground;
- 
-
+  if ( whiteMode==true && hour()>=9 && hour()<=17 ) {
+    backgroundColour = whiteBackground;
+    foregroundColour = black;
+  } else {
+    backgroundColour = darkBackground;
+    foregroundColour = yellow; //Note: if(hour()<9&&hour()>17)
+    if ( hour()>=9 && hour()<=17 ) foregroundColour = white;
   //
   //CONTINUE HERE
   //Paper Folding for Case Study
@@ -109,7 +111,12 @@ if ( hour()<9 && hour() >17)  backgroundColour = DarkBackground;
 } //End setup
 //
 void draw() {
-  background(backgroundColour); //Grayscale
+  background(backgroundColour);
+  fill(foregroundcolour);
+  //
+  //Quit ButtonY>quitButtonY && mouseY<quitButtronY+quitButtonHeight ) fill(Purple);
+  //fill(purple);
+  //if ( mouseX>quitButtonX+quitButtonWidth && mouse
 } //End draw
 //
 void keyPressed() {
