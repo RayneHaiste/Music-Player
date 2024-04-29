@@ -46,16 +46,12 @@ void setup() {
   albumCoverHeight = appHeight*6/16; //Fraction Example
   playButtonX = appWidth*3.5/8;
   playButtonY = appHeight*8/9;
-  playButtonWidth = appWidth*1/8;
+  playButtonWidth = appWidth*1/12;
   playButtonHeight = appHeight*1/12;
   quitButtonX = appWidth*90/100;
   quitButtonY = appHeight*91/100;
   quitButtonWidth = appWidth*9/100;
   quitButtonHeight = appHeight*8/100;
-    SongLengthX = appWidth*0;
-   SongLengthY = appHeight*7/9;
-   SongLengthWidth = appWidth*0;
-   SongLengthHeight = appHeight*1/20;
    BackArrowX = appWidth*0/100;
    BackArrowY = appHeight*0/100;
    BackArrowWidth = appWidth*5/100;
@@ -64,7 +60,7 @@ void setup() {
    SongNameY = appHeight*78/100;
    SongNameWidth = appWidth*46/100;
    SongNameHeight = appHeight*5/100;
-   NextSongX = appWidth*4.5/8;
+   NextSongX = appWidth*4.48/8;
    NextSongY = appHeight*85/100;
    NextSongWidth = appWidth*1/12;
    NextSongHeight = appHeight*1/12;
@@ -72,6 +68,10 @@ void setup() {
    PreviousSongY = appHeight*85/100;
    PreviousSongWidth = appWidth*1/12;
    PreviousSongHeight = appHeight*1/12;
+   SongLengthX =appWidth*2/10;
+   SongLengthY =appHeight*75/100;
+   SongLengthWidth =appWidth*6/10;
+   SongLengthHeight =appHeight*1/12;
   //Layout DIVs
   //rect(X, Y, Width, Height);
   //rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
@@ -109,7 +109,16 @@ void setup() {
 //
 void draw() {
   background(backgroundColour);
-  fill(foregroundColour);
+  fill(green);
+  rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
+  fill(green);
+  rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
+  fill(green);
+   rect(PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight);
+   fill(green);
+    rect(NextSongX, NextSongY, NextSongWidth, NextSongHeight);
+    fill(green);
+    rect(SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight);
   //
   //Quit Button
   //fill(purple);
