@@ -17,6 +17,9 @@ void setup() {
   String backgroundImageName = "nissan-gtr-50-by-italdesign (1).jpg";
   String extension = ".jpg";
   String pathway = "../../images/"
+  String portrait = "Portrait";
+  String path = pathway + landscape_Portrait + backgroundImageName +extension;
+  String path = pathway + landscape_Portrait + backgroundImageName +extension;
   backgroundImage = loadImage("");
   //
   //DIV
