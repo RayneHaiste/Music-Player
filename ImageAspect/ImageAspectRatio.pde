@@ -11,7 +11,7 @@ String landscape_Square = "Landscape & Square Images/";
 //
 void setup() {
   //Display
- // size(600, 400); //width, height //400, 500
+  // size(600, 400); //width, height //400, 500
   fullScreen(); //displayWidth, displayHeight
   appWidth = width; //displayWidth
   appHeight = height; //displayHeight
@@ -25,6 +25,11 @@ void setup() {
   albumCoverHeight = appHeight*6/16; //Fraction Example
   //
   //Variable Population
+  float smallerAlbumCoverDimension = ( albumCoverWidth < albumCoverHeight ) ? aLbumCoverWidth : albumCoverHeight ;
+  int albumCoverImageWidthPixel = 300;
+  int albumCoverImageWidthPixel = 300;
+  float albumCoverAspectRatio = ;
+  float largerAlbumCoverDimension = ; //Aspect Ratio
   //DIVs
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
 } //End setup
