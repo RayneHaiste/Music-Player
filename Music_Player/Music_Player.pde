@@ -1,3 +1,4 @@
+//Library
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -7,7 +8,12 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 //Minim minim;
+AudioPlayer soundEffects1;
+AudioPlayer playList1;
 int appWidth, appHeight;
+int size;
+PFont generalFont;
+  String quit="QUIT";
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float AlbumCoverX, AlbumCoverY, AlbumCoverWidth, AlbumCoverHeight;
 float PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight;
@@ -17,7 +23,9 @@ float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
 float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
 //
+color backgroundColour, darkBackground=0, whiteBackground=255;
 color backgroundColour, DarkBackground, WhiteBackground;
+color foregroundColour;
 Boolean whiteMode=false;
 Boolean lightMode=false;
 Boolean dayMode=false;
@@ -25,10 +33,9 @@ String backgroundImageName = " ";
 String extension = ".jpg";
 String extension = ".png";
 String pathway = "../O,ages/";
-String 
+//String
 
-//
-void setup() {
+  void setup() {
   //size(400, 500); //width, height
   fullScreen(); //displayWidth, displayHeight
   appWidth = displayWidth;
@@ -37,7 +44,15 @@ void setup() {
   Minim = new Minim (This)
     //soundEffects1 = minim.loadFile( path );
     String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
-  println(displayInstructions);
+  String extension = ".mp3";
+  String quitButtonSound = "";
+  String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
+  soundEffects 1 = minim.loadfile( path )
+    println(displayInstructions);
+  //printArray(fontList); //For listing all possible fonts to choose from, then createFont
+  size = ( appWidth > appHeight ) ? appHeight : appWidth ; // Font size starts with smaller dimension
+  generalFont = createFont("Harrington", size);
+  //bottomFont = createFont("", size); //Note: more than one font allowed
   //
   //Population
   backgroundX = appWidth*0;
