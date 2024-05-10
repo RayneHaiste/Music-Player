@@ -10,3 +10,4 @@ TO DO LIST
 [X]Move sound effects into own folder
 []Night mode colors,FFFF00, 000000.
 []Day mode colors, 000000, 00FF8E
+[]Add all music player images, including album cover for a song.
