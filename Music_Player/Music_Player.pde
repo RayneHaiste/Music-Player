@@ -13,7 +13,7 @@ AudioPlayer playList1;
 int appWidth, appHeight;
 int size;
 PFont generalFont;
-  String quit="QUIT";
+String quit="QUIT";
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float AlbumCoverX, AlbumCoverY, AlbumCoverWidth, AlbumCoverHeight;
 float PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight;
@@ -35,20 +35,20 @@ String extension = ".png";
 String pathway = "../O,ages/";
 //String
 
-  void setup() {
+void setup() {
   //size(400, 500); //width, height
   fullScreen(); //displayWidth, displayHeight
   appWidth = displayWidth;
   appHeight = displayHeight;
   //Landscape is HARDCODED
-  Minim = new Minim (This)
-    //soundEffects1 = minim.loadFile( path );
-    String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
+  Minim = new Minim (This);
+  //soundEffects1 = minim.loadFile( path );
+  String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
   String extension = ".mp3";
   String quitButtonSound = "";
   String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
-  soundEffects 1 = minim.loadfile( path )
-    println(displayInstructions);
+  soundEffects1 = minim.loadfile( path );
+  println(displayInstructions);
   //printArray(fontList); //For listing all possible fonts to choose from, then createFont
   size = ( appWidth > appHeight ) ? appHeight : appWidth ; // Font size starts with smaller dimension
   generalFont = createFont("Harrington", size);
