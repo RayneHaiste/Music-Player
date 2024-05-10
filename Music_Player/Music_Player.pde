@@ -29,10 +29,15 @@ color foregroundColour;
 Boolean whiteMode=false;
 Boolean lightMode=false;
 Boolean dayMode=false;
-String backgroundImageName = " ";
 String extension = ".jpg";
 String extension = ".png";
+String pathway1 ="Porsche918";
+String pathway2 ="porsche918WHITE";
 String pathway = "../O,ages/";
+String pathDarkBackgroundImage, pathLightBackgroundImage;
+PImage albumCoverImage;
+PImage backgroundImage;
+PImage Yeat, Porsche918, porsche918WHITE;
 //String
 
 void setup() {
@@ -118,21 +123,20 @@ void setup() {
   //if ( hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
   //if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
   if ( dayMode==true && hour()>=9 && hour()<=17 ) { //Day & Night Mode Clock Choice
-    if (lightmode==true ) [
       backgroundColour = whiteBackground;
     foregroundColour = black;
     backgroundImageName = MusicPlayerImage;
     path = pathway + landscape_Square + backgroundImageName + extension;
-    backgroundImage = loadImage( path );
-    ] else [
-      backgroundColour = whiteBackground;
-    foregroundColour = black;
-    ] //End Light & Dark Modes
-      backgroundColour = whiteBackground;
-    foregroundColour = black;
+    backgroundImage = loadImage( pathway2 );
+    ] else if ( lightmode==false ) [
+      backgroundColour = black;
+    foregroundColour = whiteBackground;
+    backgroundImage = loadImage( path1 );
+  ] 
   } else {
     backgroundColour = darkBackground;
-    foregroundColour = yellow; //Note: if(hour()<9&&hour()>17)
+    foregroundColour = yellow; 
+    backgroundImage = loadImage( path1 );
     if ( hour()>=9 && hour()<=17 ) foregroundColour = white;
     //CONTINUE HERE
     //Paper Folding for Case Study
