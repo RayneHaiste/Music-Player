@@ -23,22 +23,7 @@ float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
 float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
 //
-color backgroundColour, darkBackground=0, whiteBackground=255;
-color backgroundColour, DarkBackground, WhiteBackground;
-color foregroundColour;
-Boolean whiteMode=false;
-Boolean lightMode=false;
-Boolean dayMode=false;
-String extension = ".jpg";
-String extension = ".png";
-String pathway1 ="Porsche918";
-String pathway2 ="porsche918WHITE";
-String pathway = "../O,ages/";
-String pathDarkBackgroundImage, pathLightBackgroundImage;
-PImage albumCoverImage;
-PImage backgroundImage;
-PImage Yeat, Porsche918, porsche918WHITE;
-//String
+
 
 void setup() {
   //size(400, 500); //width, height
@@ -46,7 +31,7 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //Landscape is HARDCODED
-  Minim = new Minim (This);
+  minim = new Minim (This);
   //soundEffects1 = minim.loadFile( path );
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
   String extension = ".mp3";
@@ -116,6 +101,23 @@ void setup() {
    rect(X, Y, Width, Height);
    */
   divs();
+  
+  
+  color backgroundColour, darkBackground=0, whiteBackground=255;
+color foregroundColour;
+Boolean whiteMode=false;
+Boolean lightMode=false;
+Boolean dayMode=false;
+String extensionJPG = ".jpg";
+String extensionPNG = ".png";
+String pathway1 ="Porsche918";
+String pathway2 ="porsche918WHITE";
+String pathway = "../O,ages/";
+String pathDarkBackgroundImage, pathLightBackgroundImage;
+PImage albumCoverImage;
+PImage backgroundImage;
+PImage Yeat, Porsche918, porsche918WHITE;
+
   //Var Population
   DarkBackground = 0; //Gray Scale
   WhiteBackground = #255; //Gray Scale
@@ -128,11 +130,11 @@ void setup() {
     backgroundImageName = MusicPlayerImage;
     path = pathway + landscape_Square + backgroundImageName + extension;
     backgroundImage = loadImage( pathway2 );
-    ] else if ( lightmode==false ) [
+  } else if ( lightmode==true ) {
       backgroundColour = black;
     foregroundColour = whiteBackground;
     backgroundImage = loadImage( path1 );
-  ] 
+ 
   } else {
     backgroundColour = darkBackground;
     foregroundColour = yellow; 
@@ -143,7 +145,8 @@ void setup() {
     //Write Out Ratios on 2nd Case Study
     //More time for DIVs, Grade Progress
     //
-  } //End setup
+  }
+}//End setup
   //
   void draw() {
     background(backgroundColour); //Grayscale
@@ -165,12 +168,18 @@ void setup() {
       } else {
         lightMode = false; //Dark Mode ON, no darkMode Boolean required
       }
-    } //End Day Mode
+    }
+  }//End Day Mode
     //
     //soundEffects1.loop(0);
-  } //End keyPressed
+   //End keyPressed
   //
   void mousePressed() {
-  } //End mousePressed
+    
+    
+    
+    
+    
+  }//End mousePressed
   //
   // End MAIN Program

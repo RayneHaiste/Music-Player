@@ -1,4 +1,4 @@
-float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight, albumCoverWidthAdjusted, albumCoverHeightAdjusted;
 float playButtonX, playButtonY, playButtonWidth, playButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
