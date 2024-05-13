@@ -140,17 +140,22 @@ PImage Yeat, Porsche918, porsche918WHITE;
     foregroundColour = yellow; 
     backgroundImage = loadImage( path1 );
     if ( hour()>=9 && hour()<=17 ) foregroundColour = white;
-    //CONTINUE HERE
-    //Paper Folding for Case Study
-    //Write Out Ratios on 2nd Case Study
-    //More time for DIVs, Grade Progress
-    //
+    //CONTINUE HERE;
+    //Paper Folding for Case Study;
+    //Write Out Ratios on 2nd Case Study;
+    //More time for DIVs, Grade Progress;
   }
 }//End setup
   //
   void draw() {
     background(backgroundColour); //Grayscale
-  } //End draw
+      if ( dayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
+    //CAUTION: See setup
+    backgroundImage = loadImage( pathLightBackgroundImage );
+  } else if ( lightMode == false ) {
+    backgroundImage = loadImage( pathDarkBackgroundImage );
+  } else
+   //End draw
   //
   void keyPressed() {
     if (key=='Q' || key=='q')
@@ -175,11 +180,8 @@ PImage Yeat, Porsche918, porsche918WHITE;
    //End keyPressed
   //
   void mousePressed() {
-    
-    
-    
-    
-    
+    if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight );
+   
   }//End mousePressed
   //
   // End MAIN Program
