@@ -8,11 +8,11 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim; //creates object to access all functions
-//int numberSoundEffects = 4; //DEV Verify, OS able to count (CS20 Solution)
-//int numberMusicSongs = 8; //DEV Verify, OS able to count (CS20 Solution)
+int numberSoundEffects = 4;
+int numberMusicSongs = 4;
 AudioPlayer[] playList; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 AudioPlayer[] soundEffects; //"Play List" for Sound Effects
-//int currentSong = 0; //JAVA starts at 0, no for all languages
+int currentSong = 0; //JAVA starts at 0, not for all languages
 //
 int appWidth, appHeight;
 //
@@ -23,7 +23,7 @@ void setup() {
   appWidth = displayWidth; //width
   appHeight = displayHeight; //height
   //Landscape is HARDCODED
-  String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bru, turn your phun";
+  String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Turn screen over";
   //println(displayInstructions);
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
@@ -37,16 +37,18 @@ void setup() {
   String pathQuitButtonSound = sketchPath( pathwaySoundEffects + quitButtonSound + extension ); //Absolute Path
   String pathIMHSong = sketchPath( pathwayMusic + IMH + extension ); //Absolute Path
   //println ( "Absolute Pathway:", pathGrooveSong ); //pathQuitButtonSound
-  soundEffects1 = minim.loadFile( pathQuitButtonSound );
-  playList1 =  minim.loadFile( pathGrooveSong ); // "" is compiler error
+  soundEffects[0] = minim.loadFile( pathQuitButtonSound );
+  playList[0] =  minim.loadFile( pathIMHSong ); // "" is compiler error
   //
   //playList1.loop(0); //Testing Only
   //
 } //End setup
 //
 void draw() {
-  //println( "Song Position", playList1.position(), "Song Length", playList1.length() );
-  //playList1.loop(0); //ERROR: only plays beginning of song before starting again
+  println( "Song Position", playList[currentSong].position(), "Song Length", playList[currentSong].length() );
+  //
+  //ERROR: only plays beginning of song before starting again
+  //playList[currentSong].loop(0); 
   //
   //if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()!=-1 ) println("There are", playList[currentSong].loopCount(), "loops left.");
   //if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()==-1 ) println("Looping Infinitely");
@@ -66,6 +68,7 @@ void draw() {
 //
 void keyPressed() {} //End keyPressed
 //
+
 void mousePressed() {} //End mousPressed
 //
 //End MAIN Program
