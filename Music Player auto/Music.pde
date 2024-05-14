@@ -23,8 +23,8 @@ void setup() {
   appWidth = displayWidth; //width
   appHeight = displayHeight; //height
   //Landscape is HARDCODED
-  String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Turn screen over";
-  //println(displayInstructions);
+  String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Turn screen over PAL";
+  println(displayInstructions);
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
   String pathwaySoundEffects = "./Songs&SoundEffect/"; //Relative Path
@@ -52,7 +52,8 @@ void draw() {
   //
   //if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()!=-1 ) println("There are", playList[currentSong].loopCount(), "loops left.");
   //if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()==-1 ) println("Looping Infinitely");
-  //if ( playList[currentSong].isPlaying() && !playList[currentSong].isLooping() ) println("Play Once");
+  if ( !playList[currentSong].isPlaying() ) println( "Nothing is playing, Pick a song!" );
+  if ( playList[currentSong].isPlaying() && !playList[currentSong].isLooping() ) println("Play Once");
   //
   /*
   if ( playList[currentSong].isPlaying() ) {
@@ -64,11 +65,20 @@ void draw() {
     playList[currentSong].play();
   }
   */
-} //End draw
-//
-void keyPressed() {} //End keyPressed
-//
+ } //End draw
+ //
+ void keyPressed() {
+ if (key=='P' || key=='p' ) { //Play pause button
 
+if () {
+ playList[currentSong].play();
+} else {
+ .pause();
+ }
+ } //End Play Pause Button
+//
+} //End keyPressed
+//
 void mousePressed() {} //End mousPressed
 //
 //End MAIN Program
