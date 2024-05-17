@@ -5,7 +5,6 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-
 //Global Variables
 //Minim minim;
 AudioPlayer soundEffects1;
@@ -23,8 +22,6 @@ float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
 float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
 //
-
-
 void setup() {
   //size(400, 500); //width, height
   fullScreen(); //displayWidth, displayHeight
@@ -101,22 +98,22 @@ void setup() {
    rect(X, Y, Width, Height);
    */
   divs();
-  
-  
+
+
   color backgroundColour, darkBackground=0, whiteBackground=255;
-color foregroundColour;
-Boolean whiteMode=false;
-Boolean lightMode=false;
-Boolean dayMode=false;
-String extensionJPG = ".jpg";
-String extensionPNG = ".png";
-String pathway1 ="Porsche918";
-String pathway2 ="porsche918WHITE";
-String pathway = "../O,ages/";
-String pathDarkBackgroundImage, pathLightBackgroundImage;
-PImage albumCoverImage;
-PImage backgroundImage;
-PImage Yeat, Porsche918, porsche918WHITE;
+  color foregroundColour;
+  Boolean whiteMode=false;
+  Boolean lightMode=false;
+  Boolean dayMode=false;
+  String extensionJPG = ".jpg";
+  String extensionPNG = ".png";
+  String pathway1 ="Porsche918";
+  String pathway2 ="porsche918WHITE";
+  String pathway = "../O,ages/";
+  String pathDarkBackgroundImage, pathLightBackgroundImage;
+  PImage albumCoverImage;
+  PImage backgroundImage;
+  PImage Yeat, Porsche918, porsche918WHITE;
 
   //Var Population
   DarkBackground = 0; //Gray Scale
@@ -125,19 +122,18 @@ PImage Yeat, Porsche918, porsche918WHITE;
   //if ( hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
   //if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
   if ( dayMode==true && hour()>=9 && hour()<=17 ) { //Day & Night Mode Clock Choice
-      backgroundColour = whiteBackground;
+    backgroundColour = whiteBackground;
     foregroundColour = black;
     backgroundImageName = MusicPlayerImage;
     path = pathway + landscape_Square + backgroundImageName + extension;
     backgroundImage = loadImage( pathway2 );
   } else if ( lightmode==true ) {
-      backgroundColour = black;
+    backgroundColour = black;
     foregroundColour = whiteBackground;
     backgroundImage = loadImage( path1 );
- 
   } else {
     backgroundColour = darkBackground;
-    foregroundColour = yellow; 
+    foregroundColour = yellow;
     backgroundImage = loadImage( path1 );
     if ( hour()>=9 && hour()<=17 ) foregroundColour = white;
     //CONTINUE HERE;
@@ -146,42 +142,41 @@ PImage Yeat, Porsche918, porsche918WHITE;
     //More time for DIVs, Grade Progress;
   }
 }//End setup
-  //
-  void draw() {
-    background(backgroundColour); //Grayscale
-      if ( dayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
+//
+void draw() {
+  background(backgroundColour); //Grayscale
+  if ( dayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
     //CAUTION: See setup
     backgroundImage = loadImage( pathLightBackgroundImage );
   } else if ( lightMode == false ) {
     backgroundImage = loadImage( pathDarkBackgroundImage );
   } else
-   //End draw
-  //
-  void keyPressed() {
-    if (key=='Q' || key=='q')
-    {
-      soundeffect_1();
-    }
-    if (key==CODED && keyCode==ESC) //Hardcoded QUIT, no sound available
-    {
-      soundeffect_1();
-    }
-    //CAUTION, must return to "Request White, Light Mode"
-    if ( key=='W' || key=='w' ) { //Day Mode, White Light Containing Blue Colour
-      if (  lightMode == false ) {
-        lightMode = true;  //Light Mode ON
-      } else {
-        lightMode = false; //Dark Mode ON, no darkMode Boolean required
-      }
-    }
-  }//End Day Mode
+    //End draw
     //
-    //soundEffects1.loop(0);
-   //End keyPressed
+    void keyPressed() {
+      if (key=='Q' || key=='q')
+      {
+        soundeffect_1();
+      }
+      if (key==CODED && keyCode==ESC) //Hardcoded QUIT, no sound available
+      {
+        soundeffect_1();
+      }
+      //CAUTION, must return to "Request White, Light Mode"
+      if ( key=='W' || key=='w' ) { //Day Mode, White Light Containing Blue Colour
+        if (  lightMode == false ) {
+          lightMode = true;  //Light Mode ON
+        } else {
+          lightMode = false; //Dark Mode ON, no darkMode Boolean required
+        }
+      }
+    }//End Day Mode
+  //
+  //soundEffects1.loop(0);
+  //End keyPressed
   //
   void mousePressed() {
     if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight );
-   
   }//End mousePressed
   //
   // End MAIN Program
