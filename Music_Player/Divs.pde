@@ -2,7 +2,7 @@ float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight, albumCoverWid
 float playButtonX, playButtonY, playButtonWidth, playButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 //
-void divs() {
+//void divs() {
   population();
   drawRects();
 } //End DIVs
@@ -39,5 +39,5 @@ void drawRects() { //Layout DIVs
   rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
   //
-} //End Draw Rectangles
-//End DIVs SubProgram
+} //End Draw Rectangles;
+//End DIVs SubProgram;
