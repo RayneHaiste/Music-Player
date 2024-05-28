@@ -177,6 +177,6 @@ void draw() {
   //
   void mousePressed() {
     if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight );
-  }//End mousePressed
+  } //End mousePressed
   //
   // End MAIN Program

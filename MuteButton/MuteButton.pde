@@ -28,21 +28,21 @@ void setup() {
   appHeight = displayHeight; //height
   //Landscape is HARDCODED
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bru, turn your phun";
-  //println(displayInstructions);
+  println(displayInstructions);
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
-  String pathwaySoundEffects = "../../../../Audio/SoundEffect/"; //Relative Path
-  String pathwayMusic = "../../../../Audio/MusicDownload/"; //Relative Path
+  String pathwaySoundEffects = "./Songs&SoundEffect/SoundEff"; //Relative Path
+  String pathwayMusic = "./Songs&SoundEffect/Songs"; //Relative Path
   String quitButtonSound = "CarDoorClosing";
-  String groove = "groove";
+  String IMH = "in my head – Rexlambo (No Copyright Music)";
   String extension = ".mp3";
   //println ( pathwaySoundEffects+quitButtonSound+extension );
-  //println ( "Relative Pathway:", pathwayMusic+groove+extension );
+  //println ( "Relative Pathway:", pathwayMusic+IMH+extension );
   String pathQuitButtonSound = sketchPath( pathwaySoundEffects + quitButtonSound + extension ); //Absolute Path
-  String pathGrooveSong = sketchPath( pathwayMusic + groove + extension ); //Absolute Path
-  //println ( "Absolute Pathway:", pathGrooveSong ); //pathQuitButtonSound
+  String pathIMHSong = sketchPath( pathwayMusic + IMH + extension ); //Absolute Path
+  //println ( "Absolute Pathway:", pathIMHSong ); //pathQuitButtonSound
   soundEffects[0] = minim.loadFile( pathQuitButtonSound );
-  playList[0] =  minim.loadFile( pathGrooveSong ); // "" is compiler error
+  playList[0] =  minim.loadFile( pathIMHSong ); // "" is compiler error
   //
   //Note: Music starts before CANVAS ... Purpose of Player
   //Note: See Easter Egg about Time-On and Looping Songs
@@ -119,9 +119,6 @@ void keyPressed() {
     } else {
       playList[currentSong].mute() ;
     }
-  }
- 
-  playList[currentSong].Mute();
   }
   //
 } //End keyPressed
