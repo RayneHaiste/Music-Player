@@ -13,6 +13,7 @@ int numberMusicSongs = 8; //DEV Verify, OS able to count (CS20 Solution)
 AudioPlayer[] playList = new AudioPlayer[ numberMusicSongs ]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 AudioPlayer[] soundEffects = new AudioPlayer[ numberSoundEffects ]; //"Play List" for Sound Effects
 int currentSong = 0; //JAVA starts counting at 0, not for all languages
+AudioMetaData[] //To be continued
 //
 int appWidth, appHeight;
 //
@@ -20,9 +21,9 @@ Boolean looping=false;
 //Protects .rewind in draw() from being inappropriately accessed between .play(), .loop(1), & .loop()
 String testingOnly = "1";
 PFont generalFont;
-color black=#000000, white=#FFFFFF, nightInk=#FFFF00
-  //
-  void setup() {
+color black=#000000, white=#FFFFFF, nightInk=#FFFF00;
+//
+void setup() {
   //Display
   size(600, 400); //width, height //400, 500
   //fullScreen(); //displayWidth, displayHeight
@@ -33,7 +34,7 @@ color black=#000000, white=#FFFFFF, nightInk=#FFFF00
   //println(displayInstructions);
   //
   //Font Code
-  createFont(  "Bodoni"  appHeight  );
+  generalFont=createFont ("Bodoni"  appHeight);
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
   String pathwaySoundEffects = "../Songs&SoundEffect/SoundEff/"; //Relative Path
   String pathwayMusic = "../Songs&SoundEffect/Songs/"; //Relative Path
@@ -93,6 +94,10 @@ void draw() {
    playList[currentSong].rewind(); //CAUTION: !.isPlaying() & .rewind() = STOP
    }
    */
+  rect(width*1/4, height*0, width*1/2, height*1/10);
+
+  fill(blamck);
+  textAlign (CENTER, CENTER);
 } //End draw
 //
 void keyPressed() {
