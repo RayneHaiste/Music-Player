@@ -18,9 +18,11 @@ int appWidth, appHeight;
 //
 Boolean looping=false;
 //Protects .rewind in draw() from being inappropriately accessed between .play(), .loop(1), & .loop()
-//Boolean isMuted;
-//
-void setup() {
+String testingOnly = "1";
+PFont generalFont;
+color black=#000000, white=#FFFFFF, nightInk=#FFFF00
+  //
+  void setup() {
   //Display
   size(600, 400); //width, height //400, 500
   //fullScreen(); //displayWidth, displayHeight
@@ -28,11 +30,13 @@ void setup() {
   appHeight = displayHeight; //height
   //Landscape is HARDCODED
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bru, turn your phun";
-  println(displayInstructions);
+  //println(displayInstructions);
   //
+  //Font Code
+  createFont(  "Bodoni"  appHeight  );
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
-  String pathwaySoundEffects = "./Songs&SoundEffect/SoundEff/"; //Relative Path
-  String pathwayMusic = "./Songs&SoundEffect/Songs/"; //Relative Path
+  String pathwaySoundEffects = "../Songs&SoundEffect/SoundEff/"; //Relative Path
+  String pathwayMusic = "../Songs&SoundEffect/Songs/"; //Relative Path
   String quitButtonSound = "CarDoorClosing";
   String IMH = "in my head – Rexlambo (No Copyright Music)";
   String extension = ".mp3";
@@ -80,6 +84,8 @@ void draw() {
      playList[currentSong].play();
      */
   }
+  //MUTE Fix
+  if ( playList[currentSong].isMuted() ) println( "Muted" ); //End MUTE Fix
   /* Previous IF-Else
    if ( playList[currentSong].isPlaying() ) {
    //Empty IF, TRUE
@@ -111,7 +117,7 @@ void keyPressed() {
     playList[currentSong].rewind(); //Affects LOOP Times
     looping = false;
   } // End STOP Button
-    if ( key=='M' || key=='m' ) {
+  if ( key=='M' || key=='m' ) { //Mute Button
     //Note: mute individual songs if multiple songs are playing
     //CAUTION: potential fatal error
     if ( playList[currentSong].isMuted() ) {
@@ -119,11 +125,12 @@ void keyPressed() {
     } else {
       playList[currentSong].mute() ;
     }
-  }
+  } //End MUTE
   //
 } //End keyPressed
 //
-void mousePressed() {} //End mousPressed
+void mousePressed() {
+} //End mousPressed
 //
 //End MAIN Program
 //

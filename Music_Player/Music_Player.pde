@@ -32,7 +32,7 @@ void setup() {
   //soundEffects1 = minim.loadFile( path );
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
   String extension = ".mp3";
-  String quitButtonSound = "";
+  String quitButtonSound = "CarDoorClosing";
   String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
   soundEffects1 = minim.loadfile( path );
   println(displayInstructions);
