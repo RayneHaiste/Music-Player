@@ -1,6 +1,15 @@
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight, albumCoverWidthAdjusted, albumCoverHeightAdjusted;
 float playButtonX, playButtonY, playButtonWidth, playButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+float AlbumCoverX, AlbumCoverY, AlbumCoverWidth, AlbumCoverHeight;
+float PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight;
+float SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight;
+float BackArrowX, BackArrowY, BackArrowWidth, BackArrowHeight;
+float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
+float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
+float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
+//
 //
 //void divs() {
   population();

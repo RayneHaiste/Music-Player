@@ -13,15 +13,6 @@ int appWidth, appHeight;
 int size;
 PFont generalFont;
 String quit="QUIT";
-float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
-float AlbumCoverX, AlbumCoverY, AlbumCoverWidth, AlbumCoverHeight;
-float PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight;
-float SongLengthX, SongLengthY, SongLengthWidth, SongLengthHeight;
-float BackArrowX, BackArrowY, BackArrowWidth, BackArrowHeight;
-float SongNameX, SongNameY, SongNameWidth, SongNameHeight;
-float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
-float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
-//
 void setup() {
   //size(400, 500); //width, height
   fullScreen(); //displayWidth, displayHeight
@@ -98,8 +89,6 @@ void setup() {
    rect(X, Y, Width, Height);
    */
   divs();
-
-
   color backgroundColour, darkBackground=0, whiteBackground=255;
   color foregroundColour;
   Boolean whiteMode=false;
@@ -109,7 +98,7 @@ void setup() {
   String extensionPNG = ".png";
   String pathway1 ="Porsche918";
   String pathway2 ="porsche918WHITE";
-  String pathway = "../O,ages/";
+  String pathway = "./Images/";
   String pathDarkBackgroundImage, pathLightBackgroundImage;
   PImage albumCoverImage;
   PImage backgroundImage;
@@ -154,11 +143,12 @@ void draw() {
     //End draw
     //
     void keyPressed() {
+
       if (key=='Q' || key=='q')
       {
         soundeffect_1();
       }
-      if (key==CODED && keyCode==ESC) //Hardcoded QUIT, no sound available
+      if (key==CODED && keyCode==ESC) //Hardcoded QUIT
       {
         soundeffect_1();
       }
@@ -176,7 +166,10 @@ void draw() {
   //End keyPressed
   //
   void mousePressed() {
-    if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight );
+    if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight )
+    {
+      soundeffect_1();
+    }
   } //End mousePressed
   //
   // End MAIN Program
