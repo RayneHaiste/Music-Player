@@ -7,6 +7,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //Global Variables
 //Minim minim;
+int currentSong = numberMusicSongs - numberMusicSongs;
 AudioPlayer soundEffects1;
 AudioPlayer playList1;
 int appWidth, appHeight;
@@ -99,6 +100,13 @@ void setup() {
   String pathway1 ="Porsche918";
   String pathway2 ="porsche918WHITE";
   String pathway = "./Images/";
+  String Imh = "in_my_head";
+  String BeautifulWonder = "Beautiful_Wonder";
+  String Eldhrimner = "Eldhimner";
+  String pathQuitSound = sketchPath( pathwaySoundEffects + quitButtonSound + extension);
+  String pathImhSong = sketchPath( pathwayMusic + imh + extension);
+  String pathbeautifulWonderSong = sketchPath( pathwayMusic +BeautifulWonder + extension);
+  String pathEldhrimnerSong = sketchPath( pathwayMusic + Eldhrimner + extension);
   String pathDarkBackgroundImage, pathLightBackgroundImage;
   PImage albumCoverImage;
   PImage backgroundImage;
