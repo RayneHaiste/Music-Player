@@ -44,8 +44,6 @@ void setup() {
   soundEffects[0] = minim.loadFile( pathQuitButtonSound );
   playList[0] =  minim.loadFile( pathImhSong ); // "" is compiler error
   //
-  //Random start prototype
-    //println( "Current Song, Random Number:", int ( random(0, 4) ) );
   //Note: Music starts before CANVAS ... Purpose of Player
   //Note: See Easter Egg about Time-On and Looping Songs
   //playList[currentSong].loop(0); //Testing Only
@@ -112,6 +110,8 @@ void keyPressed() {
     playList[currentSong].pause();
     playList[currentSong].rewind(); //Affects LOOP Times
     looping = false;
+    
+   if ( key=='U'|| key=='u' ) currentSong= int ( random(0, 4) );
   } // End STOP Button
   //
 } //End keyPressed
