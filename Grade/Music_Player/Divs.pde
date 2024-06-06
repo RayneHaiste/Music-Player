@@ -11,7 +11,7 @@ float NextSongX, NextSongY, NextSongWidth, NextSongHeight;
 float PreviousSongX, PreviousSongY, PreviousSongWidth, PreviousSongHeight;
 //
 //
-//void divs() {
+void divs() {
   population();
   drawRects();
 } //End DIVs

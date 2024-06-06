@@ -1,12 +1,13 @@
-//Library
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+
 //Global Variables
-//Minim minim;
+Minim minim;
+int numberMusicSongs=3;
 int currentSong = numberMusicSongs - numberMusicSongs;
 AudioPlayer soundEffects1;
 AudioPlayer playList1;
@@ -20,13 +21,12 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //Landscape is HARDCODED
-  minim = new Minim (This);
+  minim = new Minim (this);
   //soundEffects1 = minim.loadFile( path );
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
   String extension = ".mp3";
   String quitButtonSound = "CarDoorClosing";
-  String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
-  soundEffects1 = minim.loadfile( path );
+  
   println(displayInstructions);
   //printArray(fontList); //For listing all possible fonts to choose from, then createFont
   size = ( appWidth > appHeight ) ? appHeight : appWidth ; // Font size starts with smaller dimension
@@ -59,17 +59,22 @@ void setup() {
   String pathway2 ="porsche918WHITE";
   String pathway = "./Images/";
   String Imh = "in_my_head";
+  String pathwaySoundEffects = "../Songs&SoundEffect/SoundEff/";
   String BeautifulWonder = "Beautiful_Wonder";
   String Eldhrimner = "Eldhimner";
+  String pathwayMusic = "../Songs&SoundEffect/";
   String pathQuitSound = sketchPath( pathwaySoundEffects + quitButtonSound + extension);
-  String pathImhSong = sketchPath( pathwayMusic + imh + extension);
+  String pathImhSong = sketchPath( pathwayMusic + Imh + extension);
   String pathbeautifulWonderSong = sketchPath( pathwayMusic +BeautifulWonder + extension);
   String pathEldhrimnerSong = sketchPath( pathwayMusic + Eldhrimner + extension);
   String pathDarkBackgroundImage, pathLightBackgroundImage;
   PImage albumCoverImage;
   PImage backgroundImage;
   PImage Yeat, Porsche918, porsche918WHITE;
+  String backgroundImageName = "../Images+casestudy/";
 
+String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
+  soundEffects1 = minim.loadfile( path );
   //Var Population
   DarkBackground = 0; //Gray Scale
   WhiteBackground = #255; //Gray Scale
@@ -80,16 +85,16 @@ void setup() {
     backgroundColour = whiteBackground;
     foregroundColour = black;
     backgroundImageName = MusicPlayerImage;
-    path = pathway + landscape_Square + backgroundImageName + extension;
+    path = pathway +  + backgroundImageName + extension;
     backgroundImage = loadImage( pathway2 );
   } else if ( lightmode==true ) {
     backgroundColour = black;
     foregroundColour = whiteBackground;
-    backgroundImage = loadImage( path1 );
+    backgroundImage = loadImage( pathway1 );
   } else {
     backgroundColour = darkBackground;
     foregroundColour = yellow;
-    backgroundImage = loadImage( path1 );
+    backgroundImage = loadImage( pathway1 );
     if ( hour()>=9 && hour()<=17 ) foregroundColour = white;
     //CONTINUE HERE;
     //Paper Folding for Case Study;
@@ -105,8 +110,8 @@ void draw() {
     backgroundImage = loadImage( pathLightBackgroundImage );
   } else if ( lightMode == false ) {
     backgroundImage = loadImage( pathDarkBackgroundImage );
-  } else
-    //End draw
+  }
+}//End draw
     //
     void keyPressed() {
 
