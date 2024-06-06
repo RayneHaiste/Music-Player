@@ -34,7 +34,8 @@ void setup() {
   color black=0;
   color white=255;
   color yellow=#FFFF00;
-  
+
+
   println(displayInstructions);
   //printArray(fontList); //For listing all possible fonts to choose from, then createFont
   size = ( appWidth > appHeight ) ? appHeight : appWidth ; // Font size starts with smaller dimension
@@ -42,7 +43,7 @@ void setup() {
   //bottomFont = createFont("", size); //Note: more than one font allowed
   //
   //Population
- 
+
   //Layout DIVs
   //rect(X, Y, Width, Height);
   /*
@@ -75,9 +76,11 @@ void setup() {
   PImage backgroundImage;
   PImage Yeat, Porsche918, porsche918WHITE;
   String backgroundImageName = "../Images+casestudy/";
-
-String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
-  soundEffects1 = minim.loadfile( path );
+  String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
+  
+  
+  
+  //SoundEffects = minim.loadfile(  ); //NOTE: THIS IS A BUG THAT NEEDS FIXING FIX FIX FIX FIX FIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIX
   //Var Population
   darkBackground = 0; //Gray Scale
   whiteBackground = 255; //Gray Scale
@@ -87,8 +90,8 @@ String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
   if ( dayMode==true && hour()>=9 && hour()<=17 ) { //Day & Night Mode Clock Choice
     backgroundColour = whiteBackground;
     foregroundColour = black;
-    backgroundImageName = MusicPlayerImage;
-    path = pathway +  + backgroundImageName + extension;
+    backgroundImageName = pathway2;
+    path = pathway + pathway2 + backgroundImageName + extension;
     backgroundImage = loadImage( pathway2 );
   } else if ( lightmode==true ) {
     backgroundColour = black;
@@ -108,46 +111,44 @@ String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
 //
 void draw() {
   background(backgroundColour); //Grayscale
-  if ( dayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
+  if ( DayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
     //CAUTION: See setup
-    backgroundImage = loadImage( pathLightBackgroundImage );
+    backgroundImage = loadImage( pathlightBackgroundImage );
   } else if ( lightMode == false ) {
     backgroundImage = loadImage( pathDarkBackgroundImage );
   }
 }//End draw
-    //
-    void keyPressed() {
+//
+void keyPressed() {
 
-      if (key=='Q' || key=='q')
-      {
-        soundeffect_1();
-      }
-      if (key==CODED && keyCode==ESC) //Hardcoded QUIT
-      {
-        soundeffect_1();
-      }
-      //CAUTION, must return to "Request White, Light Mode"
-      if ( key=='W' || key=='w' ) { //Day Mode, White Light Containing Blue Colour
-        if (  lightMode == false ) {
-          lightMode = true;  //Light Mode ON
-        } else {
-          lightMode = false; //Dark Mode ON, no darkMode Boolean required
-        }
-      }
-      
-       if ( key=='U'|| key=='u' ) currentSong= int ( rando(numberMusicSongs - numberMusicSongs, numberMusicSongs) ) ;
-      
-      
-    }//End Day Mode
-  //
-  //soundEffects1.loop(0);
-  //End keyPressed
-  //
-  void mousePressed() {
-    if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight )
-    {
-      soundeffect_1();
+  if (key=='Q' || key=='q')
+  {
+    soundeffect_1();
+  }
+  if (key==CODED && keyCode==ESC) //Hardcoded QUIT
+  {
+    soundeffect_1();
+  }
+  //CAUTION, must return to "Request White, Light Mode"
+  if ( key=='W' || key=='w' ) { //Day Mode, White Light Containing Blue Colour
+    if (  lightMode == false ) {
+      lightMode = true;  //Light Mode ON
+    } else {
+      lightMode = false; //Dark Mode ON, no darkMode Boolean required
     }
-  } //End mousePressed
-  //
-  // End MAIN Program
+  }
+
+  if ( key=='U'|| key=='u' ) currentSong= int ( random(numberMusicSongs - numberMusicSongs, numberMusicSongs) ) ;
+}//End Day Mode
+//
+//soundEffects1.loop(0);
+//End keyPressed
+//
+void mousePressed() {
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight )
+  {
+    soundeffect_1();
+  }
+} //End mousePressed
+//
+// End MAIN Program
