@@ -34,6 +34,9 @@ void setup() {
   color black=0;
   color white=255;
   color yellow=#FFFF00;
+    PImage albumCoverImage;
+  PImage backgroundImage;
+  PImage Yeat, Porsche918, porsche918WHITE;
 
 
   println(displayInstructions);
@@ -72,9 +75,6 @@ void setup() {
   String pathbeautifulWonderSong = sketchPath( pathwayMusic +BeautifulWonder + extension);
   String pathEldhrimnerSong = sketchPath( pathwayMusic + Eldhrimner + extension);
   String pathDarkBackgroundImage, pathLightBackgroundImage;
-  PImage albumCoverImage;
-  PImage backgroundImage;
-  PImage Yeat, Porsche918, porsche918WHITE;
   String backgroundImageName = "../Images+casestudy/";
   String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
   
@@ -131,7 +131,7 @@ void keyPressed() {
   }
   //CAUTION, must return to "Request White, Light Mode"
   if ( key=='W' || key=='w' ) { //Day Mode, White Light Containing Blue Colour
-    if (  lightMode == false ) {
+    if ( lightMode == false ) {
       lightMode = true;  //Light Mode ON
     } else {
       lightMode = false; //Dark Mode ON, no darkMode Boolean required
