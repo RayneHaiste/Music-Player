@@ -26,6 +26,14 @@ void setup() {
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Flip phone";
   String extension = ".mp3";
   String quitButtonSound = "CarDoorClosing";
+  color backgroundColour, darkBackground=0, whiteBackground=255;
+  color foregroundColour;
+  Boolean whiteMode=false;
+  Boolean lightMode=false;
+  Boolean dayMode=false;
+  color black=0;
+  color white=255;
+  color yellow=#FFFF00;
   
   println(displayInstructions);
   //printArray(fontList); //For listing all possible fonts to choose from, then createFont
@@ -48,11 +56,6 @@ void setup() {
    rect(X, Y, Width, Height);
    */
   divs();
-  color backgroundColour, darkBackground=0, whiteBackground=255;
-  color foregroundColour;
-  Boolean whiteMode=false;
-  Boolean lightMode=false;
-  Boolean dayMode=false;
   String extensionJPG = ".jpg";
   String extensionPNG = ".png";
   String pathway1 ="Porsche918";
@@ -76,9 +79,9 @@ void setup() {
 String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
   soundEffects1 = minim.loadfile( path );
   //Var Population
-  DarkBackground = 0; //Gray Scale
-  WhiteBackground = #255; //Gray Scale
-  whiteMode = True;
+  darkBackground = 0; //Gray Scale
+  whiteBackground = 255; //Gray Scale
+  whiteMode = true;
   //if ( hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
   //if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
   if ( dayMode==true && hour()>=9 && hour()<=17 ) { //Day & Night Mode Clock Choice
