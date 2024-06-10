@@ -33,7 +33,7 @@ void population() {
   quitButtonY = appHeight*91/100;
   quitButtonWidth = appWidth*9/100;
   quitButtonHeight = appHeight*8/100;
-   backgroundX = appWidth*0;
+  backgroundX = appWidth*0;
   backgroundY = appHeight*0;
   backgroundWidth = appWidth;
   backgroundHeight = appHeight;
@@ -79,9 +79,7 @@ void drawRects() { //Layout DIVs
   //rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
   rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
-   rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
-  int centerX = appWidth*1/2;
-  int centerY = appHeight*1/2;
+  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
   rect(centerX*1/2, centerY*1/2, appWidth*1/2, appHeight*1/2);
   rect(AlbumCoverX, AlbumCoverY, AlbumCoverWidth, AlbumCoverHeight);
   rect(PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight);

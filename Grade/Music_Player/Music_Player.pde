@@ -34,9 +34,10 @@ void setup() {
   color black=0;
   color white=255;
   color yellow=#FFFF00;
-    PImage albumCoverImage;
+  PImage albumCoverImage;
   PImage backgroundImage;
   PImage Yeat, Porsche918, porsche918WHITE;
+  String pathlightBackgroundImage, pathDarkBackgroundImage;
 
 
   println(displayInstructions);
@@ -74,12 +75,14 @@ void setup() {
   String pathImhSong = sketchPath( pathwayMusic + Imh + extension);
   String pathbeautifulWonderSong = sketchPath( pathwayMusic +BeautifulWonder + extension);
   String pathEldhrimnerSong = sketchPath( pathwayMusic + Eldhrimner + extension);
-  String pathDarkBackgroundImage, pathLightBackgroundImage;
   String backgroundImageName = "../Images+casestudy/";
   String path = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
+   pathDarkBackgroundImage = pathway + pathway1 + extensionJPG;
+   pathlightBackgroundImage = pathway + pathway2 + extensionJPG;
   
-  
-  
+
+
+
   //SoundEffects = minim.loadfile(  ); //NOTE: THIS IS A BUG THAT NEEDS FIXING FIX FIX FIX FIX FIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIXFIX
   //Var Population
   darkBackground = 0; //Gray Scale
@@ -110,8 +113,8 @@ void setup() {
 }//End setup
 //
 void draw() {
-  background(backgroundColour); //Grayscale
-  if ( DayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
+  //background(backgroundColour); //Grayscale
+  if ( dayMode=true && lightMode == true ) { //Boolean keyBind, Logical Shortcut
     //CAUTION: See setup
     backgroundImage = loadImage( pathlightBackgroundImage );
   } else if ( lightMode == false ) {
@@ -131,12 +134,12 @@ void keyPressed() {
   }
   //CAUTION, must return to "Request White, Light Mode"
   if ( key=='W' || key=='w' ) { //Day Mode, White Light Containing Blue Colour
-    if ( lightMode == false ) {
+    if (  lightMode == false ) {
       lightMode = true;  //Light Mode ON
     } else {
       lightMode = false; //Dark Mode ON, no darkMode Boolean required
     }
-  }
+  } //End Day Mode
 
   if ( key=='U'|| key=='u' ) currentSong= int ( random(numberMusicSongs - numberMusicSongs, numberMusicSongs) ) ;
 }//End Day Mode
